@@ -10,12 +10,14 @@ Contém funções para criar gráficos usando Matplotlib, incluindo gráficos de
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def plot_signal(t, signal):
     fig, ax = plt.subplots()
     ax.plot(t, signal)
     ax.set(xlabel='Time (s)', ylabel='Amplitude', title='Generated Signal')
     ax.grid()
     return fig
+
 
 def plot_fft(xf, yf):
     fig, ax = plt.subplots()
@@ -24,6 +26,7 @@ def plot_fft(xf, yf):
     ax.grid()
     return fig
 
+
 def plot_spectrogram(f, t, Sxx):
     fig, ax = plt.subplots()
     ax.pcolormesh(t, f, 10 * np.log10(Sxx), shading='gouraud')
@@ -31,4 +34,3 @@ def plot_spectrogram(f, t, Sxx):
     ax.set_xlabel('Time [sec]')
     ax.set_title('Spectrogram')
     return fig
-
